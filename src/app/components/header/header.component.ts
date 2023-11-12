@@ -37,4 +37,14 @@ export class HeaderComponent {
   onClearCart():void{
     this.cartService.clearCart();
   }
+
+
+   onBecomeLeader():void{
+    // Replace 'https://example.com' with the user leader website.
+    const externalWebsiteUrl = 'https://example.com';
+
+    // Use the router.navigate method to navigate to the external website.
+    window.location.href = externalWebsiteUrl;
+  }
+
 }
