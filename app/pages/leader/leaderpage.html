@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unideals:where smart savings meet college life!</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"
+        defer></script>
+    <link href="./leadercss.css" rel="stylesheet">
+    <link href="./itemcss.css" rel="stylesheet">
+    <header class="p-3 text-bg-dark">
+        <div class="container">
+            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+                    <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap">
+                        <use xlink:href="#bootstrap"></use>
+                    </svg>
+                </a>
+
+                <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                    <li><a href="#" class="nav-link px-2 text-secondary">Unideals</a></li>
+                    <li><a href="#" class="nav-link px-2 text-white">Features</a></li>
+                    <li><a href="#" class="nav-link px-2 text-white">Pricing</a></li>
+                    <li><a href="#" class="nav-link px-2 text-white">FAQs</a></li>
+                    <li><a href="#" class="nav-link px-2 text-white">About</a></li>
+                </ul>
+
+                <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
+                    <input type="search" class="form-control form-control-dark text-bg-dark" placeholder="Search..."
+                        aria-label="Search">
+                </form>
+
+                <div class="text-end">
+                    <button type="button" class="btn btn-outline-light me-2">Login</button>
+                    <button type="button" class="btn btn-warning">Sign-up</button>
+                </div>
+            </div>
+        </div>
+    </header>
+</head>
+
+<body>
+    <div class="leader-page">
+        <h1>Which group do you want to be the leader of?</h1>
+        <ul class="cart-items mt-3">
+            <li class="cart-item">
+                <div class="item-checkbox">
+                    <input type="checkbox" id="item1" name="item1" checked>
+                </div>
+                <div class="item-image" style="padding-right: 15px;">
+                    <img [src]="theImageUrl2"  alt="Item Image">
+                </div>
+                <div class="item-details">
+                    <h2 class="item-title">Lined Journal Notebook, Large A5 College Ruled Notebook, 314 Numbered Pages
+                        Work Notebook with Index Stickers, 100gsm Thick Paper, Hardcover Vegan Leather</h2>
+                    <p class="item-description">A5 size, Green</p>
+                    <p class="item-price">$12.99</p>
+                </div>
+            </li>
+        </ul>
+        <ul class="cart-items">
+            <li class="cart-item">
+                <div class="item-checkbox">
+                    <input type="checkbox" id="item1" name="item1" checked>
+                </div>
+                <div class="item-image" style="padding-right: 15px;">
+                    <img [src]="theImageUrl1"  alt="Item Image">
+                </div>
+                <div class="item-details">
+                    <h2 class="item-title">10pcs File Bag Transparent Plastic Waterproof Large-capacity Button Test
+                        Paper Storage Bag Business Office Supplies Student File Information Bag</h2>
+                    <p class="item-description">Folders Pockets, 10 pcs</p>
+                    <p class="item-price">$9.99</p>
+                </div>
+            </li>
+        </ul>
+        <ul class="cart-items">
+            <li class="cart-item">
+                <div class="item-checkbox">
+                    <input type="checkbox" id="item1" name="item1" checked>
+                </div>
+                <div class="item-image" style="padding-right: 15px;">
+                    <img [src]="theImageUrl3"  alt="Item Image">
+                </div>
+                <div class="item-details" >
+                    <h2 class="item-title" >Paper Mate Flair Felt Tip Pens | Medium Point 0.7 Millimeter Marker Pens |
+                        School Supplies for Teachers & Students | Assorted Colors, 12 Count</h2>
+                    <p class="item-description">Fasion colors, 12 pack</p>
+                    <p class="item-price">$9.99</p>
+                </div>
+            </li>
+        </ul>
+        <!-- Checkbox for policy agreement -->
+        <div class="policy-checkbox">
+            <input type="checkbox" id="policyCheck" name="policyCheck">
+            <label for="policyCheck"> <a href="#" id="policyLink">I have read and understand the policy about becoming a
+                    group leader</a></label>
+        </div>
+        <div class="button-container">
+            <button type="button" class="btn btn-primary"  routerLink="../checkout" > Submit</button>
+        </div>
+        
+
+
+
+        <!-- The Modal -->
+        <div id="policyModal" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <p>As a Group Leader, you are stepping into a role of responsibility and commitment. Your duties will include the following:</p>
+
+                <ul>
+                  <li>Coordinating the purchase of products for the group, ensuring that all orders align with the group's needs and preferences.</li>
+                  <li>Managing the collection of funds from group members in a timely and transparent manner.</li>
+                  <li>Overseeing the logistics of product delivery, which includes liaising with the suppliers to ensure that the items are received as expected and distributed accordingly.</li>
+                  <li>Providing clear communication to group members regarding order statuses, delivery schedules, and any updates or changes to the original plan.</li>
+                  <li>Handling any issues or disputes that may arise during the group buying process, including returns, exchanges, or refunds, in accordance with our platform's policies and procedures.</li>
+                  <li>Maintaining the privacy and security of all group members' personal and payment information.</li>
+                  <li>Ensuring that all activities comply with local laws and regulations related to group purchases and distribution of goods.</li>
+                </ul>
+                
+                <p>By accepting the role of a Group Leader, you agree to uphold these responsibilities and to act in the best interest of the group members you represent. Your commitment is crucial to the smooth operation and success of the group buying experience on our platform.</p>
+                                <!-- The rest of your policy content -->
+            </div>
+        </div>
+
+    </div>
+
+<script src="itemjs.js" ></script>
+
+</body>
+<footer class="site-footer mt-5">
+    <div class="footer-inner">
+        <div class="footer-column">
+            <h4>Get to Know Us</h4>
+            <ul>
+                <li><a href="#">Careers</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h4>Make Money with Us</h4>
+            <ul>
+                <li><a href="#">Sell on Unideals</a></li>
+                <li><a href="#">Supply on Unideals</a></li>
+                <li><a href="#">Become a Group Leader</a></li>
+                <li><a href="#">Protect & Build Your Brand</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h4>Let Us Help You</h4>
+            <ul>
+                <li><a href="#">Shipping Rates & Policies</a></li>
+                <li><a href="#">Returns Are Easy</a></li>
+                <li><a href="#">Manage your Content and Devices</a></li>
+                <li><a href="#">Customer Service</a></li>
+            </ul>
+        </div>
+    </div>
+</footer>
