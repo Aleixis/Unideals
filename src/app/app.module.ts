@@ -26,6 +26,11 @@ import { CartComponent } from './pages/cart/cart.component';
 import { CartService } from './services/cart.service';
 import { StoreService } from './services/store.service';
 import { HttpClientModule } from '@angular/common/http';
+import { LeaderComponent } from './pages/leader/leader.component';
+import { CheckoutComponent } from './pages/checkout/checkout.component';
+import { HomeHaveLeaderComponent } from './pages/home-have-leader/home-have-leader.component';
+import { ItemsComponent } from './pages/items/items.component';
+import { ProductBoxLeaderComponent } from './pages/home-have-leader/product-box-leader/product-box-leader.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +40,12 @@ import { HttpClientModule } from '@angular/common/http';
     ProductsHeaderComponent,
     FiltersComponent,
     ProductBoxComponent,
-    CartComponent
+    CartComponent,
+    LeaderComponent,
+    CheckoutComponent,
+    HomeHaveLeaderComponent,
+    ItemsComponent,
+    ProductBoxLeaderComponent
   ],
   imports: [
     BrowserModule,
