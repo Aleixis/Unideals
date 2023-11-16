@@ -5,10 +5,12 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { CartService } from 'src/app/services/cart.service';
 
 @Component({
-  selector: 'app-product-box',
-  templateUrl:'product-box.component.html'
+  selector: 'app-product-box-leader',
+  templateUrl:'product-box-leader.component.html',
+  styles: [
+  ]
 })
-export class ProductBoxComponent {
+export class ProductBoxLeaderComponent {
   @Input() fullWidthMode =false;
   @Input() product:Product |undefined;
   @Output() addToCart =new EventEmitter();
@@ -21,16 +23,16 @@ export class ProductBoxComponent {
 
   onAddToLeaderCart():void {
     this.addToLeaderCart.emit(this.product);
-    //this.isSecondButtonClicked = true;
+   // this.isSecondButtonClicked = true;
     
   }
   
   onAddToCart():void{
-    // if (this.isSecondButtonClicked) {
+   //  if (this.isSecondButtonClicked) {
       this.addToCart.emit(this.product);
     //}
     
-     // else{
+      //else{
        // this._snackBar.open('No leader yet,can not buy now', 'ok', {duration:3000});
        // console.log('no leader yet')
       //}

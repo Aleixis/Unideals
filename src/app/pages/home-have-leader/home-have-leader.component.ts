@@ -7,10 +7,12 @@ import { StoreService } from 'src/app/services/store.service';
 const ROWS_HEIGHT :{[id:number]:number}={1:400, 3:335, 4:350};
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
+  selector: 'app-home-have-leader',
+  templateUrl:'home-have-leader.component.html' ,
+  styles: [
+  ]
 })
-export class HomeComponent implements OnInit, OnDestroy {
+export class HomeHaveLeaderComponent implements OnInit, OnDestroy {
 
   cols=3; 
   category:string | undefined;
