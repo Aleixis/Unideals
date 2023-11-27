@@ -10,7 +10,6 @@
 
     <td mat-footer-cell *matFooterCellDef>
       <button mat-raised-button routerLink="/home">Continue Shopping</button>
-      
 
     </td>
 
@@ -89,22 +88,14 @@
       </button>
     </td>
 
-    <td mat-footer-cell  *matFooterCellDef>
-      <div >
-       
-  <div>
-      <button mat-raised-button color="warn" class="float-right"  routerLink="../leader">
-        Be leader
+    <td mat-footer-cell *matFooterCellDef>
+      <button 
+      (click)="onCheckout()"
+      mat-raised-button color="warn" class="float-right" routerLink="/checkout">
+        Proceed To Checkout
       </button>
-    
-      <button mat-raised-button color="primary" class="float-right"  routerLink="../checkout">
-        Checkout
-      </button>
-    </div>
-
-    </div>
     </td>
- 
+
   </ng-container>
 
 

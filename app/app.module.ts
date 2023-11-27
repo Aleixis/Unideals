@@ -26,8 +26,10 @@ import { CartComponent } from './pages/cart/cart.component';
 import { CartService } from './services/cart.service';
 import { StoreService } from './services/store.service';
 import { HttpClientModule } from '@angular/common/http';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { IntroductionComponent } from './pages/introduction/introduction.component';
 import { LeaderComponent } from './pages/leader/leader.component';
-import { CheckoutComponent } from './pages/checkout/checkout.component';
+import { ItemComponent } from './pages/item/item.component';
 
 @NgModule({
   declarations: [
@@ -38,8 +40,9 @@ import { CheckoutComponent } from './pages/checkout/checkout.component';
     FiltersComponent,
     ProductBoxComponent,
     CartComponent,
+    IntroductionComponent,
     LeaderComponent,
-    CheckoutComponent
+    ItemComponent
   ],
   imports: [
     BrowserModule,
@@ -58,6 +61,7 @@ import { CheckoutComponent } from './pages/checkout/checkout.component';
     MatBadgeModule,
     MatSnackBarModule,
     HttpClientModule,
+    MatTooltipModule,
 
 
   ],

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { Cart, CartItem, LeaderCart, LeaderCartItem } from '../models/cart.model';
+import { Cart, CartItem } from '../models/cart.model';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Injectable({
@@ -8,8 +8,6 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class CartService {
 cart = new BehaviorSubject<Cart>({ items:[]});
-leaderCart = new BehaviorSubject<LeaderCart>({ items:[]});
-
 
   
   constructor(private _snackBar: MatSnackBar) { }
@@ -30,30 +28,6 @@ leaderCart = new BehaviorSubject<LeaderCart>({ items:[]});
     console.log(this.cart.value); 
   }
 
-
-
-
-
-
-
-  addToLeaderCart(item:LeaderCartItem):void{
-    const items = [...this.leaderCart.value.items];
-
-    const itemInLeaderCart = items.find((_item)=>_item.id ===item.id);
-    if(itemInLeaderCart){
-      itemInLeaderCart.quantity +=1;
-    }
-    else{
-      items.push(item);
-    }
-
-    this.leaderCart.next({items:items});
-    this._snackBar.open('1 item added to Leader cart','ok',{duration:3000});
-    console.log(this.leaderCart.value); 
-  }
-
-
-
   getTotal(items:Array<CartItem>):number{
     return items.
       map((item)=> item.price * item.quantity)
@@ -61,34 +35,11 @@ leaderCart = new BehaviorSubject<LeaderCart>({ items:[]});
   }
   
 
-
-
-  getLeaderTotal(items:Array<LeaderCartItem>):number{
-    return items.
-      map((item)=> item.price * item.quantity)
-      .reduce((prev,current)=> prev+current,0)
-  }
-  
-
-
-
   clearCart():void{
 
     this.cart.next({ items:[]});
     this._snackBar.open('Cart is clear', 'ok', {duration:3000});
   }
-
-
-
-
-  clearLeaderCart():void{
-
-    this.leaderCart.next({ items:[]});
-    this._snackBar.open('Leader Cart is clear', 'ok', {duration:3000});
-  }
-
-
-
 
   removeFromCart(item:CartItem, update = true):Array<CartItem>{
   const  filteredItems = this.cart.value.items.filter((_item)=>_item.id !==item.id);
@@ -99,19 +50,6 @@ leaderCart = new BehaviorSubject<LeaderCart>({ items:[]});
 }
 return filteredItems;
 }
-
-
-
-removeFromLeaderCart(item:LeaderCartItem, update = true):Array<LeaderCartItem>{
-  const  filteredItems = this.leaderCart.value.items.filter((_item)=>_item.id !==item.id);
-    
-  if(update){
-  this.leaderCart.next({items:filteredItems});
-  this._snackBar.open('item removed from leader cart','ok',{duration:3000});
-}
-return filteredItems;
-}
-
 
 removeQuantity(item:CartItem):void{
 
@@ -135,30 +73,5 @@ this.cart.next({items:filteredItems});
 this._snackBar.open('1 item removed from cart','ok',{duration:3000});
 
 }
-
-
-removeLeaderQuantity(item:LeaderCartItem):void{
-
-  let itemForRemoval:LeaderCartItem | undefined;
-  
-  let filteredItems = this.leaderCart.value.items.map((_item)=>{
-    if(_item.id===item.id){
-      _item.quantity-=1;
-  
-      if(_item.quantity===0){
-        itemForRemoval=_item
-      } 
-    }
-    return _item;
-  });
-  
-  if(itemForRemoval){
-    filteredItems = this.removeFromCart(itemForRemoval,false);
-  }
-  this.leaderCart.next({items:filteredItems});
-  this._snackBar.open('1 item removed from cart','ok',{duration:3000});
-  
-  }
-
 
 }

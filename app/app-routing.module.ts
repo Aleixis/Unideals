@@ -2,17 +2,17 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import { CartComponent } from './pages/cart/cart.component';
+import { IntroductionComponent } from './pages/introduction/introduction.component';
 import { LeaderComponent } from './pages/leader/leader.component';
+import { ItemComponent } from './pages/item/item.component';
 import { CheckoutComponent } from './pages/checkout/checkout.component';
 
-const routes: Routes = [{
+const routes: Routes = [
+  {
   path:'home',
   component:HomeComponent
 
 },
-
-{ path: 'leader', 
-component: LeaderComponent },
 
 {
   path:'cart',
@@ -21,13 +21,32 @@ component: LeaderComponent },
 },
 
 {
+  path:'introduction',
+  component:IntroductionComponent
+
+},
+
+
+{
   path:'checkout',
   component:CheckoutComponent
 
 },
 
 {
-  path:'',redirectTo:'home', pathMatch:'full'
+  path:'leader',
+  component:LeaderComponent
+
+},
+
+{
+  path:'item',
+  component:ItemComponent
+
+},
+
+{
+  path:'',redirectTo:'introduction', pathMatch:'full'
 }];
 
 @NgModule({
